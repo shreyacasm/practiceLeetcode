@@ -13,7 +13,7 @@ public:
     int pairSum(ListNode* head) {
         ListNode* slow=head;
         ListNode* fast=head;
-        int counter=0;
+
         stack<int> store;
         
         while(fast && fast->next){
@@ -22,7 +22,6 @@ public:
             //cout<<"value is :"<<value<<"\n";
             store.push(value);
             slow=slow->next;
-            counter++;
         }
         
         
