@@ -25,13 +25,12 @@ public:
         }
         
         
-        int max=0,temp=0;
+        int max=0;
         while(slow){
-            temp=store.top()+slow->val;
             //cout<<"value of slow val :"<<slow->val<<"\n";
             
-            if(temp>=max)
-                max=temp;
+            if((store.top()+slow->val)>max)
+                max=store.top()+slow->val;
             store.pop();
             if(slow->next==NULL){
                 return max;
