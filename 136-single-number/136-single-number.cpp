@@ -1,15 +1,10 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        map<int,int> store;
-        for(auto it=nums.begin(); it!=nums.end(); ++it){
-            store[*it]++;
+        int x=nums[0];
+        for(int it=1;it!=nums.size();it++){
+            x=x^nums[it];
         }
-        for(auto it=store.begin();it!=store.end();++it){
-            if(it->second==1){
-                return it->first;
-            }
-        }
-        return 0;
+        return x;
     }
 };
