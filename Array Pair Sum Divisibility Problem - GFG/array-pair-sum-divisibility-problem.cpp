@@ -23,12 +23,13 @@ class Solution {
     for (int i = 0; i < nums.size(); i++) {
         // Remainder of current element
         int rem = ((nums[i] % k) + k) % k;
-
-        if(freq[rem]!=freq[k-rem]){
-            if(rem==0 && freq[0]%2==1){
+        if(rem==0){
+            if(freq[rem]%2!=0){
                 return false;
-            }
-            else if(k-rem+rem!=0 && rem!=0){
+            }            
+        }
+        else if(freq[rem]!=freq[k-rem]){
+            if(k-rem+rem!=0 && rem!=0){
                 return false;
             }
         }
